@@ -9,8 +9,6 @@ RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 10
 RUN pip3 install mysql-connector-python
 RUN pip3 install --upgrade oauth2client
 RUN pip3 install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
-ARG pruebas $prueba # you could give this a default value as well
-ENV prueba $pruebas
 RUN cd /opt; \
     git clone https://github.com/ismaeldarosa19/challenge.git 
 WORKDIR /opt/challenge
