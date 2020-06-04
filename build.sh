@@ -1,7 +1,7 @@
 #!/bin/bash
 #construimos las imágenes a partir de 2 dockerfile que levantamos desde github
-#docker build  -t dev/challenge https://github.com/ismaeldarosa19/challengedeploy.git -f dev/dockerfile.dev
-#docker build  -t mysql/challenge https://github.com/ismaeldarosa19/challengedeploy.git -f database/dockerfile.mysql
+docker build  -t dev/challenge https://github.com/ismaeldarosa19/challengedeploy.git -f dev/dockerfile.dev
+docker build  -t mysql/challenge https://github.com/ismaeldarosa19/challengedeploy.git -f database/dockerfile.mysql
 
 #creamos la funcion randomstring para generar contraseñas randómicas para las credenciales de la DB
 randomstring()
@@ -17,10 +17,10 @@ var_mysql_password=$(randomstring)
 var_mysql_database='challenge'
 
 #ejecutamos el contenedor mysql, asignamos las variables generadas a las variables de entorno que utiliza el dockerfile para crear la DB
-#docker run -it -e MYSQL_ROOT_PASSWORD=$var_mysql_root_password -e MYSQL_USER=$var_mysql_user -e MYSQL_PASSWORD=$var_mysql_password -e MYSQL_DATABASE=$var_mysql_database --name mysql -d mysql/challenge
+docker run -it -e MYSQL_ROOT_PASSWORD=$var_mysql_root_password -e MYSQL_USER=$var_mysql_user -e MYSQL_PASSWORD=$var_mysql_password -e MYSQL_DATABASE=$var_mysql_database --name mysql -d mysql/challenge
 
 #ejecutamos el contenedor dev y lo linkeamos a mysql para poder conectarnos a la base de datos
-#docker run -e userDB=$var_mysql_user -e passDB=$var_mysql_password -it --name dev --link mysql -d dev/challenge
+docker run -e userDB=$var_mysql_user -e passDB=$var_mysql_password -it --name dev --link mysql -d dev/challenge
 
 #mensaje de finalización y ayuda de ejecución
 sleep 1
