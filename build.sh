@@ -5,7 +5,8 @@ docker build  -t mysql/challenge https://github.com/ismaeldarosa19/challengedepl
 #creamos la funcion randomstring para generar contraseñas randómicas para las credenciales de la DB
 randomstring()
 {
-    cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w ${1:-32} | head -n 1
+	export LC_CTYPE=C
+    	cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w ${1:-32} | head -n 1
 }
 
 #asignamos contraseñas randómicas a variables a través de la función randomstring
