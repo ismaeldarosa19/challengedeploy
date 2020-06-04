@@ -45,6 +45,7 @@ def main():
     else:
     	## Si se encuentran mensajes con los parámetros indicados, los recorremos en búsca de los headers 
         repetidos=0
+        norepetidos=0
         for message in messages: 
         	#Leemos cada mensaje por donde pasamos en el bucle, obtenìendolo a través del message id en el array message[] 
             msg = service.users().messages().get(userId=user_id, id=message['id']).execute() 
@@ -71,9 +72,10 @@ def main():
             cursor.execute(sql, (message['id'],))
             data_tmp = cursor.fetchone()
 
+            ##Si existe el id se suma 1 a la variable repetidos
             if data_tmp:
                 repetidos+=1
-                print ("existe y no se inserta")
+
             if not data_tmp:
                 sqlInsertar = "INSERT INTO busquedas (`idmsg`,`date`, `from`, `subject`) VALUES (%s,%s, %s, %s)"
                 cursor.execute(sqlInsertar,(message['id'],dateEmail,senderEmail,subjectEmail))
@@ -82,9 +84,11 @@ def main():
 
                 ## Registramos en el archivo log, la información insertada
                 file_object.write(logTime + "	'INSERT'	" + message['id'] + "	" + dateEmail + "	" + senderEmail + "	" + subjectEmail + "\n") 
-
+                norepetidos+=1
     #file_object.close() ## Cerramos la conexion al archivo de logs
-print(repetidos)
+        print(f'{norepetidos} registros insertados en la base de datos')
+        if repetidos > 0:
+            print(f'Se han encontrado {repetidos} registros ya existentes en la base de datos y no se han insertado')
 if __name__ == '__main__':
 	main()
 cursor.close()
