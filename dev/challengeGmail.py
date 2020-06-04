@@ -86,9 +86,9 @@ def main():
                 file_object.write(logTime + "	'INSERT'	" + message['id'] + "	" + dateEmail + "	" + senderEmail + "	" + subjectEmail + "\n") 
                 norepetidos+=1
     #file_object.close() ## Cerramos la conexion al archivo de logs
-        print(f'{norepetidos} insertados en la base de datos')
+        print(f'{norepetidos} registros insertados en la base de datos')
         if repetidos > 0:
-            print(f'Se han encontrado {repetidos} ids ya existentes en la base de datos y no se han insertado')
+            print(f'Se han encontrado {repetidos} registros ya existentes en la base de datos y no se han insertado')
 if __name__ == '__main__':
 	main()
 cursor.close()
