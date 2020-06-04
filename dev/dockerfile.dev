@@ -12,6 +12,6 @@ RUN pip3 install --upgrade google-api-python-client google-auth-httplib2 google-
 RUN cd /opt; \
     git clone https://github.com/ismaeldarosa19/challenge.git 
 WORKDIR /opt/challenge
-ADD token.json /opt/challenge
-ADD credentials.json /opt/challenge
+ADD credentials/token.json /opt/challenge
+ADD credentials/credentials.json /opt/challenge
 

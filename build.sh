@@ -1,6 +1,6 @@
 #construimos las imágenes a partir de 2 dockerfile que levantamos desde github
-docker build  -t dev/challenge https://github.com/ismaeldarosa19/challengedeploy.git -f dockerfile.dev
-docker build  -t mysql/challenge https://github.com/ismaeldarosa19/challengedeploy.git -f dockerfile.mysql
+docker build  -t dev/challenge https://github.com/ismaeldarosa19/challengedeploy.git -f dev/dockerfile.dev
+docker build  -t mysql/challenge https://github.com/ismaeldarosa19/challengedeploy.git -f database/dockerfile.mysql
 
 #creamos la funcion randomstring para generar contraseñas randómicas para las credenciales de la DB
 randomstring()
@@ -19,11 +19,10 @@ docker run -it -e MYSQL_ROOT_PASSWORD=$var_mysql_root_password -e MYSQL_USER=$va
 
 #ejecutamos el contenedor dev y lo linkeamos a mysql para poder conectarnos a la base de datos
 docker run -e userDB=$var_mysql_user -e passDB=$var_mysql_password -it --name dev --link mysql -d dev/challenge
-clear
 
 #mensaje de finalización y ayuda de ejecución
-clear
-sleep 2
+#clear
+#sleep 2
 COLOR1='\033[0;33m'
 COLOR2='\033[0;93m'
 COLOR0='\033[0m'
