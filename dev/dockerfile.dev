@@ -9,8 +9,8 @@ RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 10
 RUN pip3 install mysql-connector-python
 RUN pip3 install --upgrade oauth2client
 RUN pip3 install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
-ADD dev/challengeGmail.py /opt/challenge
 WORKDIR /opt/challenge
+ADD dev/challengeGmail.py /opt/challenge
 ADD credentials/token.json /opt/challenge
 ADD credentials/credentials.json /opt/challenge
 
