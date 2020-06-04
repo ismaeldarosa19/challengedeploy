@@ -84,7 +84,7 @@ def main():
                 file_object.write(logTime + "	'INSERT'	" + message['id'] + "	" + dateEmail + "	" + senderEmail + "	" + subjectEmail + "\n") 
 
     #file_object.close() ## Cerramos la conexion al archivo de logs
-print(repetidos)
+print($repetidos)
 if __name__ == '__main__':
 	main()
 cursor.close()
