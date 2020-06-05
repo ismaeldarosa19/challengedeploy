@@ -9,7 +9,7 @@
 
 ## ¿Como puedo ejecutarlo?
     - Instalar Docker
-        *sudo apt install docker.io*
+        sudo apt install docker.io
         
     - Generar y descargar token siguiendo la documentación de google. 
         siguiendo la documentación oficial de Google: https://developers.google.com/gmail/api/quickstart/python
