@@ -24,7 +24,7 @@ docker run -e userDB=$var_mysql_user -e passDB=$var_mysql_password -it --name de
 
 #mensaje de finalización y ayuda de ejecución
 sleep 1
-clear
+#clear
 COLOR1='\033[0;32m'
 COLOR2='\033[1;92m'
 COLOR0='\033[0m'
