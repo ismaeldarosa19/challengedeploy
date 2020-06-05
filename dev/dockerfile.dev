@@ -12,5 +12,4 @@ RUN pip3 install --upgrade google-api-python-client google-auth-httplib2 google-
 WORKDIR /opt/challenge
 ADD dev/challengeGmail.py /opt/challenge
 ADD credentials/token.json /opt/challenge
-ADD credentials/credentials.json /opt/challenge
 
