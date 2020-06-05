@@ -48,8 +48,8 @@
                         
         5 - Ejecuta el contenedor dev en modo interactivo y en segundo plano. Se envía como parámetro las variables de
         entorno generadas previamente.
-            Se genera un link al contenedor mysql para poder realizar conexiones a la base de datos.
-                docker run -e userDB=$var_mysql_user -e passDB=$var_mysql_password -it --name dev --link mysql -d dev/challenge
+          Se genera un link al contenedor mysql para poder realizar conexiones a la base de datos.
+            docker run -e userDB=$var_mysql_user -e passDB=$var_mysql_password -it --name dev --link mysql -d dev/challenge
                 
 ## ¿Cuando termina el deploy, cómo realizo la consulta?
             Para poder ejecutar el script en busca de la palabra "DevOps", se debe ejecutar el siguiente comando:
