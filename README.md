@@ -51,7 +51,19 @@
         de datos.
          docker run -e userDB=$var_mysql_user -e passDB=$var_mysql_password -it --name dev --link mysql -d dev/challenge
                 
-## ¿Cuando termina el deploy, cómo realizo la consulta?
+## ¿Cuando termina el deploy, cómo utilizo el script?
             Para poder ejecutar el script en busca de la palabra "DevOps", se debe ejecutar el siguiente comando:
-                docker exec -it dev python challengeGmail.py    
+                docker exec -it dev python challengeGmail.py
+                
+            Para buscar los registros que hay en la base de datos, se debe ejecutar lo siguiente:
+                docker exec -it dev python challengeGmailQ.py
+                
+## ¿Se puede utilizar sin Docker?
+            Este script se puede utilizar de manera independiente a Docker, con los siguientes requerimientos:
+            
+            - Python 3.8 o mayor
+            - Mysql 8
+            
+            
+            
                 
