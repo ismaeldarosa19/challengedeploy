@@ -28,27 +28,35 @@ docker run -e userDB=$var_mysql_user -e passDB=$var_mysql_password -it --name de
 #no se realizó un control que esté preguntando a MYSQL si está vivo. Lo cual sería la manera correcta de hacerlo.
 sleep 1
 #clear
+clear
 COLOR1='\033[0;32m'
 COLOR2='\033[1;92m'
 COLOR0='\033[0m'
 
 y=2
 x=0
-i=0
+i=10
 while [ $i -lt 101 ]; do
     tput cup $y $x
     echo ''
-    echo ''
-    echo ''
-    echo '=====Finalizando deploy ==== API Gmail Python====='
-    echo $i%                                           
-    echo '=================Ismael da Rosa==================='
+    echo '**** Finalizando deploy |||| API Gmail Python*****'
+    echo '*                                                *'                                           
+    if [ $i = 100 ]
+	then
+        echo '*                       FIN                      *'
+    else
+        echo '*                       '$i%'                      *'
+    fi
+
+    echo '*                                                *'
+    echo '**************** Ismael da Rosa ******************'
     echo ''
     i=$((i+5))
 sleep 1
 done
 
 printf "${COLOR1}El deploy ha finalizado.\n"
-printf "Ejecutar: ${COLOR2}docker exec -it dev python challengeGmail.py\n${COLOR0}"
+printf "Ejecutar consulta a la API: ${COLOR2}docker exec -it dev python challengeGmail.py\n\n"
+printf "${COLOR1}Consultar registros en DB: ${COLOR2}docker exec -it dev python challengeGmailQ.py\n${COLOR0}"
 echo '\n\n\n'
 
