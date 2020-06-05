@@ -3,9 +3,9 @@
     Documentación basada en Ubuntu 18.04 / Docker 19.03
 
 ## ¿Que hace?
-    A través de la API de Gmail se busca una cadena de texto definida previamente(DevOps). Esta cadena de texto tiene que aparecer
-    en el asunto o cuerpo de los mensajes. Los correos que se encuentren con ese string se guardarán en una base de datos con la siguiente información:
-    fecha, from, subject.
+    A través de la API de Gmail se busca una cadena de texto definida previamente(DevOps). Esta cadena de texto tiene que 
+    aparecer en el asunto o cuerpo de los mensajes. Los correos que se encuentren con ese string se guardarán en una base 
+    de datos con la siguiente información: fecha, from, subject.
 
 ## ¿Como puedo ejecutarlo?
     - Instalar Docker
@@ -33,17 +33,21 @@
         2 - Construye una imagen de docker llamada mysql donde funcionará la base de datos
                 docker build  -t mysql/challenge  -f database/dockerfile.mysql .
         
-        3 - Genera strings seguros que se utilizarán, para definir la generación de usuario y passwords de la base de datos a través de variables de entorno.
+        3 - Genera strings seguros que se utilizarán, para definir la generación de usuario y passwords de la base de datos 
+        a través de variables de entorno.
                 randomstring()
                 {
                     export LC_CTYPE=C
                     cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w ${1:-32} | head -n 1
                 }
         
-        4 - Ejecuta el contenedor de base de datos en modo interactivo y en segundo plano, enviando las variables de entorno con los valores generados por la funcion randomstrin.
-                docker run -it -e MYSQL_ROOT_PASSWORD=$var_mysql_root_password -e MYSQL_USER=$var_mysql_user -e MYSQL_PASSWORD=$var_mysql_password -e MYSQL_DATABASE=$var_mysql_database --name mysql -d mysql/challenge
+        4 - Ejecuta el contenedor de base de datos en modo interactivo y en segundo plano, enviando las variables de entorno 
+        con los valores generados por la funcion randomstrin.
+                docker run -it -e MYSQL_ROOT_PASSWORD=$var_mysql_root_password -e MYSQL_USER=$var_mysql_user -e
+                MYSQL_PASSWORD=$var_mysql_password -e MYSQL_DATABASE=$var_mysql_database --name mysql -d mysql/challenge
         
-        5 - Ejecuta el contenedor dev en modo interactivo y en segundo plano. Se envía como parámetro las variables de entorno generadas previamente.
+        5 - Ejecuta el contenedor dev en modo interactivo y en segundo plano. Se envía como parámetro las variables de 
+        entorno generadas previamente.
             Se genera un link al contenedor mysql para poder realizar conexiones a la base de datos.
                 docker run -e userDB=$var_mysql_user -e passDB=$var_mysql_password -it --name dev --link mysql -d dev/challenge
  
