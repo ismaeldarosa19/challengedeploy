@@ -1,7 +1,7 @@
 #!/bin/bash
 #construimos las imágenes a partir de 2 dockerfile que levantamos desde github
-docker build  -t dev/challenge https://github.com/ismaeldarosa19/challengedeploy.git -f dev/dockerfile.dev
-docker build  -t mysql/challenge https://github.com/ismaeldarosa19/challengedeploy.git -f database/dockerfile.mysql
+docker build  -t dev/challenge  -f dev/dockerfile.dev .
+docker build  -t mysql/challenge  -f database/dockerfile.mysql .
 
 #creamos la funcion randomstring para generar contraseñas randómicas para las credenciales de la DB
 randomstring()
