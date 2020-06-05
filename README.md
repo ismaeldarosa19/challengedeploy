@@ -3,9 +3,9 @@
     Documentación basada en Ubuntu 18.04 / Docker 19.03
 
 ## ¿Que hace?
-    A través de la API de Gmail se busca una cadena de texto definida previamente(DevOps). Esta cadena de texto tiene que
-    aparecer en el asunto o cuerpo de los mensajes. Los correos que se encuentren con ese string se guardarán en una base
-    de datos con la siguiente información: fecha, from, subject.
+    A través de la API de Gmail se busca una cadena de texto definida previamente(DevOps). Esta cadena de texto tiene 
+    que aparecer en el asunto o cuerpo de los mensajes. Los correos que se encuentren con ese string se guardarán en 
+    una base de datos con la siguiente información: fecha, from, subject.
 
 ## ¿Como puedo ejecutarlo?
     - Instalar Docker
@@ -47,9 +47,9 @@
                 MYSQL_PASSWORD=$var_mysql_password -e MYSQL_DATABASE=$var_mysql_database --name mysql -d mysql/challenge
                         
         5 - Ejecuta el contenedor dev en modo interactivo y en segundo plano. Se envía como parámetro las variables de
-        entorno generadas previamente.
-          Se genera un link al contenedor mysql para poder realizar conexiones a la base de datos.
-            docker run -e userDB=$var_mysql_user -e passDB=$var_mysql_password -it --name dev --link mysql -d dev/challenge
+        entorno generadas previamente. Se genera un link al contenedor mysql para poder realizar conexiones a la base 
+        de datos.
+         docker run -e userDB=$var_mysql_user -e passDB=$var_mysql_password -it --name dev --link mysql -d dev/challenge
                 
 ## ¿Cuando termina el deploy, cómo realizo la consulta?
             Para poder ejecutar el script en busca de la palabra "DevOps", se debe ejecutar el siguiente comando:
