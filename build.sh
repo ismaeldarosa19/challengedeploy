@@ -22,7 +22,10 @@ docker run -it -e MYSQL_ROOT_PASSWORD=$var_mysql_root_password -e MYSQL_USER=$va
 #ejecutamos el contenedor dev y lo linkeamos a mysql para poder conectarnos a la base de datos
 docker run -e userDB=$var_mysql_user -e passDB=$var_mysql_password -it --name dev --link mysql -d dev/challenge
 
-#mensaje de finalización y ayuda de ejecución
+
+
+#se crea una ventana de 20 segs para dar tiempo a que levante el mysql en el contenedor. Por razones de tiempo y objetivo del challenge 
+#no se realizó un control que esté preguntando a MYSQL si está vivo. Lo cual sería la manera correcta de hacerlo.
 sleep 1
 #clear
 COLOR1='\033[0;32m'
