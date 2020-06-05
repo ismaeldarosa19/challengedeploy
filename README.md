@@ -58,6 +58,12 @@
             Para buscar los registros que hay en la base de datos, se debe ejecutar lo siguiente:
                 docker exec -it dev python challengeGmailQ.py
                 
-                
-                
+## ¿Se puede utilizar sin Docker?
+            Este script se puede utilizar de manera independiente a Docker, con los siguientes requerimientos:
+            
+            - Python 3.8 o mayor
+            - Mysql 8
+            
+            
+            
                 
