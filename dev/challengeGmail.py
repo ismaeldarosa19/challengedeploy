@@ -26,12 +26,12 @@ def main():
     file_object = open('log.txt', 'a') 
 
     ## Se valida la autorizaciòn, verificando si existe y no está caducado token.json
-    store = file.Storage('token.json')
+    store = file.Storage('credentials/token.json')
     creds = store.get()
 
     ##Si no existen o esta caducadas las credenciales, se hace la solicitud
     if not creds or creds.invalid:
-        flow = client.flow_from_clientsecrets('credentials.json', SCOPES)
+        flow = client.flow_from_clientsecrets('credentials/credentials.json', SCOPES)
         creds = tools.run_flow(flow, store)
     service = build('gmail', 'v1', http=creds.authorize(Http()))
     
