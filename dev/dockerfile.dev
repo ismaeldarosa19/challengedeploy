@@ -8,5 +8,4 @@ RUN pip3 install tabulate
 WORKDIR /opt/challenge
 ADD dev/challengeGmail.py /opt/challenge
 ADD dev/challengeGmailQ.py /opt/challenge
-ADD credentials/token.json /opt/challenge
 
