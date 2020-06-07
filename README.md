@@ -72,7 +72,9 @@
             Para buscar los registros que hay en la base de datos, se debe ejecutar lo siguiente:
                 docker exec -it dev python challengeGmailQ.py
                 
-            Por defecto el script buscará y registrará los mensajes que contengan la palabra "DevOps". Para buscar otro string basta con             definir la variable de entorno "stringChallenge" y ponerle el valor del string a buscar.
+            Por defecto el script buscará y registrará los mensajes que contengan la palabra "DevOps". 
+            Para buscar otro string basta con definir la variable de entorno "stringChallenge" y 
+            ponerle el valor del string a buscar.
                 
 ## ¿Se puede utilizar sin Docker?
             Este script se puede utilizar de manera independiente a Docker, con los siguientes requerimientos:
