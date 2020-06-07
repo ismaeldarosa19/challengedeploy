@@ -3,7 +3,9 @@
     Documentación basada en Ubuntu 18.04 / Docker 19.03
 
 ## ¿Que hace?
-    Busca una cadena de texto específica en el inbox de una cuenta de gmail. La cadena de texto se busca en el asunto o cuerpo de los mensajes. Los mensajes encontrados que cumplan con esa condición, se guardarán en una base de datos con la siguiente información: fecha, from, subject.
+    Busca una cadena de texto específica en el inbox de una cuenta de gmail. La cadena de texto se busca en 
+    el asunto o cuerpo de los mensajes. Los mensajes encontrados que cumplan con esa condición, se guardarán 
+    en una base de datos con la siguiente información: fecha, from, subject.
 
 ## ¿Como puedo ejecutarlo? 
 ### Utilizando Docker
@@ -21,7 +23,10 @@
     - Ejecutar el archivo build.sh en la raiz del pryecto
         Este archivo realiza el deployment del proyecto. Automatizando el todo el proceso de construcción.
     
-    - En el paso final del deployment se solicita un código para generar el token de la API. Este código se obtiene accediendo a una url sugerida en pantalla. Luego de acceder a la url, hay que seleccionar la cuenta de gmail(misma cuenta utilizada en Paso 3). Se conceden los permisos de acceso y al final se obtiene un código. Este código es el que hay que copiar para pegar en el script.
+    - En el paso final del deployment se solicita un código para generar el token de la API. Este código 
+    se obtiene accediendo a una url sugerida en pantalla. Luego de acceder a la url, hay que seleccionar 
+    la cuenta de gmail(misma cuenta utilizada en Paso 3). Se conceden los permisos de acceso y al final se 
+    obtiene un código. Este código es el que hay que copiar para pegar en el script.
     
     
 
@@ -55,7 +60,8 @@
         
         6 - Copia/crea archivos y directorios necesarios para el funcionamiento del script.
         
-        7 - Se ejecuta el archivo challengeAuthAPI.py del conenedor dev. Este archivo se encarga de solicitar el código para la generación del token de autenticación(Paso 6 del apartado anterior).
+        7 - Se ejecuta el archivo challengeAuthAPI.py del conenedor dev. Este archivo se encarga de solicitar el código 
+        para la generación del token de autenticación(Paso 6 del apartado anterior).
         
         
                 
