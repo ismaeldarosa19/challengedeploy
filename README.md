@@ -78,7 +78,10 @@
             Este script se puede utilizar de manera independiente a Docker, con los siguientes requerimientos:
             
             - Python 3.8
-            - Mysql
+            - Mysql 8
+            - Variables de entorno con valores de acceso a Mysql: userDB, passDB
+            - Registro dns con nombre "mysql" que apunte a la ip de la base de datos
+            - Importar a la DB el archivo database.sql ubicado en el directorio database del proytecto
 
 ## Limitantes y asuntos a resolver.
             Se registrarán un máximo de 100 resultados de búsqueda. Hay que trabajar sobre el paginado de los 
