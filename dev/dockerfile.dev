@@ -5,6 +5,7 @@ RUN pip3 install mysql-connector-python
 RUN pip3 install --upgrade oauth2client 
 RUN pip3 install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
 RUN pip3 install tabulate
+ENV stringChallenge=devops
 WORKDIR /opt/challenge
 ADD dev/challengeGmail.py /opt/challenge
 ADD dev/challengeGmailQ.py /opt/challenge

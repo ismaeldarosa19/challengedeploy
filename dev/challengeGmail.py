@@ -19,7 +19,7 @@ conexion = mysql.connector.connect(**dbConnect)
 cursor = conexion.cursor()
 SCOPES = 'https://www.googleapis.com/auth/gmail.readonly'
 user_id =  'me' ## Definimos el user_id para hacer las consultas a Gmail. El usuario definido es el mismo que se define en las credenciales(me).
-query_string='DevOps' ## Definimos la cadena a buscar en los correos
+query_string=os.getenv('stringChallenge') ## Definimos la cadena a buscar en los correos
 
 def main():
     ## Abrimos la conexion al archivo de logs
