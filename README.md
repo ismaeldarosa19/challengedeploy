@@ -77,7 +77,10 @@
             
             - Python 3.8
             - Mysql
-            
+
+## Limitantes y asuntos a resolver.
+            Se registrarán un máximo de 100 resultados de búsqueda. Hay que trabajar sobre el paginado de los 
+            resultados para poder registrar más de 100 registros
             
             
             
