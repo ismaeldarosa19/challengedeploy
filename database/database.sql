@@ -26,7 +26,7 @@ CREATE TABLE `busquedas` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `idmsg` varchar(255) DEFAULT NULL,
   `date` varchar(255) DEFAULT NULL,
-  `from` varchar(320) CHARACTER SET utf8 COLLATE utf8_spanish_ci DEFAULT NULL,
+  `from` varchar(320) DEFAULT NULL,
   `subject` varchar(255) DEFAULT NULL,
   KEY `index` (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
